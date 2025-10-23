@@ -2,8 +2,8 @@
 
 export DEBIAN_FRONTEND=noninteractive
 
-apt update -y
-apt upgrade -y
+add-apt-repository -y universe
+apt update
 apt install -y ca-certificates curl git direnv
 
 install -m 0755 -d /etc/apt/keyrings
@@ -20,7 +20,7 @@ systemctl start docker
 
 usermod -aG docker ubuntu
 
-git clone https://github.com/nguyendangcuong201004/moodle-docker /home/ubuntu/moodle-docker
+git clone -b nhattpn --single-branch https://github.com/nguyendangcuong201004/moodle-docker /home/ubuntu/moodle-docker
 
 chown -R ubuntu:ubuntu /home/ubuntu/moodle-docker
 
