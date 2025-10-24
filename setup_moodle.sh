@@ -2,8 +2,7 @@
 
 export DEBIAN_FRONTEND=noninteractive
 
-add-apt-repository -y universe
-apt update
+apt update -y
 apt install -y ca-certificates curl git direnv
 
 install -m 0755 -d /etc/apt/keyrings

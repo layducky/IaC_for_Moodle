@@ -67,6 +67,7 @@ resource "aws_instance" "moodle_vm" {
   key_name      = aws_key_pair.deployer_key.key_name
   vpc_security_group_ids = [aws_security_group.vm_sg.id]
  
+  user_data = file("setup_moodle.sh")
 
   # EBS storage
   root_block_device {
